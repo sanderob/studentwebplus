@@ -6,6 +6,15 @@ console.log("studentwebplus.js loaded successfully");
 let table = document.querySelector(".table-standard.reflow.ui-panel-content");
 let resultRows = table.querySelectorAll("tr.resultatTop, tr.none");
 
+//Defines messages for use with different locales
+let languages = {"Norsk bokmål": "no", "English": "en", "Norsk nynorsk": "no"};
+let currentLanguage = checkLanguage();
+
+function checkLanguage(){
+    let languageText = document.querySelector("a.dropdown-link.arrow.linkAsButtonFlag").textContent.trim();
+    return languages[languageText];
+}
+
 studyPoints = [];
 
 // Loop through all the rows in the table and find the grades in the 6th column (index 5) and add them to the grades array. 
